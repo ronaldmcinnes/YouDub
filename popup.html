@@ -2,24 +2,53 @@
 <html>
 <head>
     <style>
-        body { min-width: 200px; font-family: Arial, sans-serif; }
-        label { display: block; margin-bottom: 8px; }
-        select, button { width: 100%; padding: 5px; }
-        #status { margin-top: 10px; font-size: 12px; color: green; }
+        body {
+            min-width: 200px;
+            font-family: Arial, sans-serif;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 5px;
+        }
+
+        #status {
+            margin-top: 10px;
+            font-size: 12px;
+            color: green;
+        }
+
+        /* Gradient Container */
+        #gradient-container {
+            padding: 10px;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #000000, #000080);
+            background-size: 400% 400%;
+            transition: background 0.5s ease;
+        }
     </style>
 </head>
 <body>
-    <label>
-        <input type="checkbox" id="toggleDubbing"> Enable Dubbing
-    </label>
-    <label>
-        Voice:
-        <select id="voiceSelect">
-            <!-- Options will be populated by popup.js -->
-        </select>
-    </label>
-    <button id="applyButton">Apply</button>
-    <div id="status"></div>
+    <div id="gradient-container">
+        <label>
+            <input type="checkbox" id="toggleDubbing"> Enable Dubbing
+        </label>
+        <label>
+            Voice:
+            <select id="voiceSelect">
+                <!-- Options will be populated by popup.js -->
+            </select>
+        </label>
+        <button id="applyButton">Apply</button>
+        <div id="status"></div>
+    </div>
+
     <script src="popup.js"></script>
+    <script src="background.js"></script>
 </body>
 </html>
