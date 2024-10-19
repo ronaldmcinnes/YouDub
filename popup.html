@@ -1,25 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-bs-theme="dark">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <style>
-        body { min-width: 200px; font-family: Arial, sans-serif; }
-        label { display: block; margin-bottom: 8px; }
-        select, button { width: 100%; padding: 5px; }
-        #status { margin-top: 10px; font-size: 12px; color: green; }
+        html, body {
+            height: 380px;
+            min-width: 350px;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        label { 
+            display: block; 
+            margin-bottom: 8px; 
+        }
+        select, button { 
+            width: 100%; 
+            padding: 5px; 
+        }
+        .container {
+            width: 380px;
+            height: 30%; 
+            margin: 20px 0;
+            padding: 20px;
+        }
+        #status { 
+            margin-top: 10px; 
+            font-size: 12px; 
+            color: green; 
+        }
+        h1 {
+            font-family: Arial, sans-serif; 
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 50px; 
+            margin: 10px 0;
+        }
+
+        .highlight {
+            color: #FF7F00; /* Orange for 'Dub' */
+        }
     </style>
 </head>
-<body>
-    <label>
-        <input type="checkbox" id="toggleDubbing"> Enable Dubbing
-    </label>
-    <label>
-        Voice:
-        <select id="voiceSelect">
-            <!-- Options will be populated by popup.js -->
-        </select>
-    </label>
-    <button id="applyButton">Apply</button>
-    <div id="status"></div>
+
+<div class="card">
+    <h1>You-<span class="highlight">Dub</span></h1>
+</div>
+
+    
+    <div class="row">
+        <div class="col text-end"> 
+            <div class="form-check form-check-inline"> <!-- Using form-check-inline for inline display -->
+                <input class="form-check-input" type="checkbox" id="toggleDubbing">
+                <label class="form-check-label text-white" for="toggleDubbing">Enable Dubbing</label>
+            </div>
+        </div>
+    
+
+        
+
+    <div class="container">
+        <div class="row">
+            <div class="col-9 text-center">
+                <div class="dropdown w-100">
+                    <button type="button" class="btn btn-primary dropdown-toggle w-100" data-bs-toggle="dropdown" aria-expanded="false">
+                        Select Voice
+                    </button>
+                    <ul class="dropdown-menu w-100">
+                        <li><a class="dropdown-item" href="#">Voice 1</a></li>
+                        <li><a class="dropdown-item" href="#">Voice 2</a></li>
+                        <li><a class="dropdown-item" href="#">Voice 3</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-3 text-center">
+                <button type="button" id="applyButton" class="btn btn-primary w-100">Apply</button>
+            </div>
+        </div>
+    </div>
+
+        <div class="container">
+        <div class="row">
+        <div class="col-4 text-center">
+            <button type="button" id="Customize" class="btn btn-primary w-200">Customize
+            </button>
+            </div>
+            <div class="col-8 text-center">
+            <span class="badge bg-secondary">Paste Your Transcript Here!</span>
+        </div>
+        </div>
+        </div>
+
+        <div id="status"></div>
+    </div>
+</div>
+
     <script src="popup.js"></script>
 </body>
 </html>
